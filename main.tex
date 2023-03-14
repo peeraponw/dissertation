@@ -1,0 +1,100 @@
+%---------------------------------------------%
+%-----------% Initialize Packages %-----------%
+%---------------------------------------------%
+\documentclass[12pt,a4paper,twoside]{report}
+\usepackage{fourier}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, width=180mm, top=23mm, bottom=17mm, bindingoffset=6mm]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{acronym}
+\usepackage{biblatex}
+\usepackage{emptypage}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage[Conny]{fncychap}
+
+\addbibresource{lib.bib}
+
+% Define header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\definecolor{headbgcolor}{RGB}{0,84,159}
+\fancyhead[LE]{%
+  \makebox[0.45\marginparwidth][r]{
+    \colorbox{headbgcolor}{\makebox[\textwidth][r]{\bfseries\textcolor{white}{\thepage}\enskip}}\hspace*{1em}}%
+  {\nouppercase{Chapter \thechapter}}\hspace*{1em}%
+}
+\fancyhead[RO]{%
+  \mbox{} \hspace*{1em}{\nouppercase{Chapter \thechapter}}%
+  \makebox[0.45\marginparwidth][l]{%
+    \hspace*{1em}\colorbox{headbgcolor}{\makebox[\textwidth][l]{\enskip\bfseries\textcolor{white}{\thepage}}}}%
+}
+
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
+% end header
+% Define chapter page
+\ChNameUpperCase
+\ChTitleAsIs
+\ChTitleVar{\Large \rm}
+% end chapter
+
+%---------------------------------------------%
+%-----------% Personal Variables %------------%
+%---------------------------------------------%
+\newcommand\titlename{Influence of surface roughness in cold-forming process}
+\newcommand\authorname{Peerapon Wechsuwanmanee}
+\newcommand\fromcityname{Nakhon Pathom, Thailand}
+\newcommand\defensedate{DD.MM.YYY}
+
+%----------------------------------------%
+%-----------% Begin the doc %------------%
+%----------------------------------------%
+\begin{document}
+
+
+\input{frontmatters/00_frontpage}
+\pagenumbering{roman}
+\input{frontmatters/declaration}
+% \input{frontmatters/acknowledgement}
+% \input{frontmatters/abstract}
+% \input{frontmatters/zusammenfassung}
+% \input{frontmatters/list_abbreviations}
+% \input{frontmatters/list_symbols}
+% \input{frontmatters/list_figures}
+% \input{frontmatters/list_tables}
+
+
+
+% % % %
+\tableofcontents
+
+
+% % % % 
+\pagenumbering{arabic}
+\input{chapters/01_0_introduction}
+
+\input{chapters/02_roughness_paper}
+% \includepdf[pages=-, pagecommand={\pagestyle{fancy}}]{papers/roughness_paper.pdf}
+
+\input{chapters/03_bending_paper}
+\includepdf[pages=-, pagecommand={\pagestyle{fancy}}]{papers/bending_paper.pdf}
+
+\input{chapters/04_het_paper}
+% \includepdf[pages=-, pagecommand={\pagestyle{fancy}}]{papers/het_paper.pdf}
+
+% \input{chapters/05_discussions}
+% \input{chapters/06_conclusions}
+
+% % % %
+
+\printbibliography
+
+\end{document}
