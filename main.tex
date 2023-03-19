@@ -23,25 +23,28 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
+% create header to have blue rectangle with page number in it
+% top-left for even pages
 \definecolor{headbgcolor}{RGB}{0,84,159} % RWTH color
 \fancyhead[LE]{%
   \makebox[0.45\marginparwidth][r]{
     \colorbox{headbgcolor}{\makebox[\textwidth][r]{\bfseries\textcolor{white}{\thepage}\enskip}}\hspace*{1em}}%
-  {\nouppercase{Chapter \thechapter}}\hspace*{1em}%
+  {\nouppercase{Chapter \thechapter}}\hspace*{1em} % chapter number 
 }
+% top-right for odd pages, 
 \fancyhead[RO]{%
-  \mbox{} \hspace*{1em}{\nouppercase{Chapter \thechapter}}%
+  \mbox{} \hspace*{1em}{\nouppercase{Chapter \thechapter}} % chapter number
   \makebox[0.45\marginparwidth][l]{%
     \hspace*{1em}\colorbox{headbgcolor}{\makebox[\textwidth][l]{\enskip\bfseries\textcolor{white}{\thepage}}}}%
 }
 
 \renewcommand{\headrulewidth}{0.0pt}
 \renewcommand{\footrulewidth}{0.0pt}
-\renewcommand{\thechapter}{\Roman{chapter}}
-\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
+\renewcommand{\thechapter}{\Roman{chapter}} % make chapter number roman
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}} % make section number arabic
+\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}} % make subsection number arabic
 % end header
-% Define chapter page
+% Define first page of each chapter
 \ChNameUpperCase
 \ChTitleAsIs
 \ChTitleVar{\Large \rm}
