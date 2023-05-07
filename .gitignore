@@ -10,4 +10,4 @@
 *.gz
 *.toc
 .vscode/settings.json
-*/*.pdf
+*.pdf
